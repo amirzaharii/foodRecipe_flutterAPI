@@ -61,7 +61,7 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     ],
                   ),
                   Text(
-                    'BEST RECIPES',
+                    'COOK DELICIOUS FOODS',
                     style: TextStyle(
                         fontSize: 10,
                         fontWeight: FontWeight.bold,
@@ -83,59 +83,62 @@ class _MainFoodPageState extends State<MainFoodPage> {
                     iconSize: Dimensions.iconSize24,
                     onPressed: () {
                       showDialog(
-                          context: context,
-                          builder: (BuildContext context) {
-                            return AlertDialog(
-                              scrollable: true,
-                              title: Text('Search Food Recipe'),
-                              content: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Form(
-                                  child: Column(
-                                    children: <Widget>[
-                                      TextFormField(
-                                        controller: _controller,
-                                        decoration: const InputDecoration(
-                                          labelText: 'Food Recipe',
-                                          icon: Icon(Icons.food_bank),
-                                        ),
-                                      )
-                                    ],
-                                  ),
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            scrollable: true,
+                            title: Text('Search Food Recipe'),
+                            content: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Form(
+                                child: Column(
+                                  children: <Widget>[
+                                    TextFormField(
+                                      controller: _controller,
+                                      decoration: const InputDecoration(
+                                        labelText: 'Food Recipe',
+                                        icon: Icon(Icons.food_bank),
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
-                              actions: [
-                                ElevatedButton(
-                                    child: Text('Search'),
-                                    onPressed: _isFoodNameEmpty
-                                        ? null
-                                        : () {
-                                            Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    FoodRecipeDetail(
-                                                  foodName: _controller.text,
-                                                ),
-                                              ),
-                                            );
-                                          })
-                              ],
-                            );
-                          });
+                            ),
+                            actions: [
+                              ElevatedButton(
+                                child: Text('Search'),
+                                onPressed: _isFoodNameEmpty
+                                    ? null
+                                    : () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) =>
+                                                FoodRecipeDetail(
+                                              foodName: _controller.text,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                              ),
+                            ],
+                          );
+                        },
+                      );
                     },
                   ),
                 ),
-              )
+              ),
             ],
           ),
         )),
 
         //Showing the body
         Expanded(
-            child: SingleChildScrollView(
-          child: FoodPageBody(),
-        )),
+          child: SingleChildScrollView(
+            child: FoodPageBody(),
+          ),
+        ),
       ],
     ));
   }

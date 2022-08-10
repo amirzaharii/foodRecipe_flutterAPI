@@ -36,8 +36,6 @@ class FoodRecipeInformation extends StatelessWidget {
   const FoodRecipeInformation({Key? key, required this.foodRecipe})
       : super(key: key);
 
-  final FoodRecipe foodRecipe;
-
   @override
   Widget build(BuildContext context) {
     return Card(

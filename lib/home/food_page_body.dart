@@ -1,6 +1,5 @@
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:food_recipe_project/pages/foodRecipe_detail.dart';
 import 'package:food_recipe_project/utils/colors.dart';
 import 'package:food_recipe_project/utils/dimensions.dart';
 import 'package:food_recipe_project/widgets/big_text.dart';
@@ -19,8 +18,6 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   var _currPageValue = 0.0;
   final double _scaleFactor = 0.8;
   final double _height = Dimensions.pageViewContainer;
-
-  FoodRecipeDetail recommended = FoodRecipeDetail(foodName: foodName);
 
   @override
   void initState() {
@@ -42,6 +39,13 @@ class _FoodPageBodyState extends State<FoodPageBody> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Text(
+          'RECOMMENDED DISHES',
+          style: TextStyle(
+              fontStyle: FontStyle.italic,
+              fontWeight: FontWeight.bold,
+              fontSize: 20),
+        ),
         //slider section
         Container(
           // color: Colors.redAccent,

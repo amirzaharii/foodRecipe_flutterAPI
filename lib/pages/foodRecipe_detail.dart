@@ -28,7 +28,9 @@ class FoodRecipeDetail extends StatelessWidget {
             }
 
             if (state is FoodRecipeLoaded) {
-              return FoodRecipeInformation(foodRecipe: state.foodRecipe);
+              return FoodRecipeInformation(
+                foodRecipe: state.foodRecipe,
+              );
             }
 
             return Text(state is FoodRecipeError

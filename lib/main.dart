@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:food_recipe_project/home/main_food_page.dart';
 import 'package:food_recipe_project/states/foodRecipe_cubit.dart';
 import 'package:get/get.dart';
+
+import 'home/main_food_page.dart';
 
 void main() {
   runApp(
